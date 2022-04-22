@@ -1,0 +1,1 @@
+<a class="btn-back-home" href="<?php echo $config['base_url']; ?>">Back to Home <i class="fa-fw fas fa-arrow-right"></i></a>

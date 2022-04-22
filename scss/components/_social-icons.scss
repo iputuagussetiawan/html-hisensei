@@ -1,0 +1,35 @@
+@use "../config/variable" as *;
+@use "../config/mixin" as *;
+.footer-social-icon {
+	display: block;
+	list-style: none;
+	padding: 0;
+	&__item {
+		display: inline-block;
+		&:last-child .footer-social-icon__link {
+			margin-right: 0px;
+		}
+	}
+	&__link {
+		position: relative;
+		color: $white;
+		margin-right: 16px;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		font-size: 24px;
+		text-decoration: none;
+		text-align: center;
+		transition: all 0.4s ease-in-out;
+	}
+
+	@media only screen and (max-width: 1199.98px) {
+		&__link {
+			margin-right: 10px;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 24px;
+		}
+	}
+}

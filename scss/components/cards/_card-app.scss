@@ -1,0 +1,171 @@
+@use "../../config/_mixin.scss" as *;
+@use "../../config/_variable.scss" as *;
+.card-app {
+	@include imageRatio(220, 168, true, cover, "image");
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	min-height: 150px;
+	color: $dark-navy;
+	font-family: $secondary-font;
+	padding: 8px;
+
+	&::before {
+		position: absolute;
+		content: "";
+		top: 0px;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: $white;
+		border-radius: 10px;
+	}
+
+	&__image-container {
+		position: absolute;
+		top: -24px;
+		img {
+			left: -20px;
+		}
+	}
+
+	&__info-container {
+		position: relative;
+		width: 100%;
+		padding-top: 0px;
+		padding-left: 230px;
+		z-index: 1;
+		p {
+			font-size: 24px;
+			font-weight: 700;
+			margin-bottom: 8px;
+
+			&:last-child {
+				margin: 0px;
+				line-height: 1.2;
+			}
+		}
+	}
+
+	&__btn {
+		display: inline-block;
+		padding: 10px 32px;
+		font-family: $secondary-font;
+		background: $blue-100;
+		color: $white;
+		font-size: 18px;
+		font-weight: 700;
+		border-radius: 50px;
+		text-decoration: none;
+		transition: 0.4s ease;
+		&:hover {
+			background: $blue-200;
+			color: $white;
+		}
+	}
+
+	&--even {
+		@extend .card-app;
+	}
+
+	@media only screen and (max-width: 1199.98px) {
+		@include imageRatio(190, 146, true, cover, "image");
+
+		min-height: 100px;
+
+		&__image-container {
+			position: absolute;
+			top: -24px;
+			left: -16px;
+			img {
+				left: -18px;
+			}
+		}
+		&__info-container {
+			padding-left: 150px;
+			p {
+				font-size: 22px;
+			}
+		}
+
+		&__btn {
+			padding: 8px 32px;
+			font-size: 16px;
+		}
+	}
+
+	@media only screen and (max-width: 991.98px) {
+		@include imageRatio(150, 115, true, cover, "image");
+		&__image-container {
+			position: absolute;
+			top: -6px;
+			left: -16px;
+		}
+		&__info-container {
+			padding-left: 90px;
+			p {
+				font-size: 18px;
+			}
+		}
+
+		&--even {
+			.card-app__info-container {
+				padding-left: 0;
+				padding-right: 24px;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		@include imageRatio(170, 130, true, cover, "image");
+		min-height: 120px;
+		&__image-container {
+			position: absolute;
+			top: -6px;
+			left: -16px;
+		}
+		&__info-container {
+			padding-left: 150px;
+			p {
+				font-size: 18px;
+			}
+		}
+		&__image-container {
+			position: absolute;
+			top: -16px;
+		}
+	}
+
+	@media only screen and (max-width: 575.98px) {
+		&::before {
+			top: 0px;
+		}
+
+		&__note span::before {
+			top: 46px;
+			width: 152px;
+			height: 50px;
+		}
+		&__info-container {
+			padding-left: 140px;
+			padding-top: 0px;
+			p {
+				margin-bottom: 8px;
+			}
+		}
+
+		&__btn {
+			padding: 8px 20px;
+			font-size: 14px;
+		}
+	}
+
+	@media only screen and (max-width: 479.98px) {
+		&__info-container {
+			p {
+				font-size: 14px;
+			}
+		}
+	}
+}

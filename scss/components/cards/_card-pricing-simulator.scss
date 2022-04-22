@@ -1,0 +1,138 @@
+@use "../../config/_mixin.scss" as *;
+@use "../../config/_variable.scss" as *;
+
+.card-simulator {
+	background-color: $white;
+	padding: 32px 24px;
+	box-shadow: $box-shadow-200;
+	border-radius: 18px;
+	color: $dark-navy;
+	opacity: 0;
+	//transform: translateY(100px);
+
+	.btn-check:active + .card-simulator__btn-grade--warning,
+	.btn-check:checked + .card-simulator__btn-grade--warning {
+		color: $white;
+		background-color: $orange;
+		border-color: $orange;
+	}
+
+	.btn-check:active + .card-simulator__btn-grade--danger,
+	.btn-check:checked + .card-simulator__btn-grade--danger {
+		color: $white;
+		background-color: $pink;
+		border-color: $pink;
+	}
+
+	.btn-check:active + .card-simulator__btn-grade--primary,
+	.btn-check:checked + .card-simulator__btn-grade--primary {
+		color: $white;
+		background-color: $purple;
+		border-color: $purple;
+	}
+
+	&__item {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-bottom: 24px;
+		border-bottom: 1px solid $gray-200;
+	}
+
+	&__label {
+		margin-bottom: 14px;
+		font-size: 16px;
+		color: $dark-navy;
+		font-weight: 700;
+	}
+
+	&__btn-grade {
+		// display: flex;
+		// align-items: center;
+		// flex-wrap: wrap;
+		// justify-content: center;
+		width: 100%;
+		padding: 6px 12px;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 1.5;
+		color: $gray-500;
+		text-align: center;
+		text-decoration: none;
+		vertical-align: middle;
+		cursor: pointer;
+		background-color: transparent;
+		border: 1px solid transparent;
+		border-radius: 4px;
+		transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+			border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		user-select: none;
+		border: 2px solid $gray-200;
+		margin-bottom: 8px !important;
+
+		&--warning {
+			@extend .card-simulator__btn-grade;
+			border-color: $orange;
+			&:active,
+			&:hover {
+				background-color: $orange;
+				color: $white;
+			}
+		}
+
+		&--danger {
+			@extend .card-simulator__btn-grade;
+			border-color: $pink;
+
+			&:active,
+			&:hover {
+				background-color: $pink;
+				color: $white;
+			}
+		}
+
+		&--primary {
+			@extend .card-simulator__btn-grade;
+			border-color: $purple;
+
+			&:active,
+			&:hover {
+				background-color: $purple;
+				color: $white;
+			}
+		}
+	}
+
+	&__btn-title {
+		font-size: 16px;
+		font-weight: 700;
+	}
+
+	@media only screen and (max-width: 1399.98px) and (min-width: 1200px) {
+		&__btn-grade {
+			height: 100%;
+		}
+	}
+
+	@media only screen and (max-width: 1199.98px) {
+		&__label {
+			font-size: 14px;
+		}
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		padding: 20px 16px;
+		&__title {
+			margin-bottom: 20px;
+			font-size: 24px;
+		}
+		&__info {
+			p {
+				font-size: 16px;
+				font-weight: 400;
+			}
+		}
+	}
+}

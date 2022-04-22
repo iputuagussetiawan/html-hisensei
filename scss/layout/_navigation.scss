@@ -1,0 +1,198 @@
+@use "../_config.scss" as *;
+
+:root {
+	--nav-margin-left: 32px;
+	--nav-font-size: 18px;
+	--nav-link-padding: 32px 0px;
+}
+
+@media only screen and (max-width: 1199.98px) {
+	:root {
+		--nav-margin-left: 16px;
+		--nav-font-size: 16px;
+		--nav-link-padding: 26px 0px;
+	}
+}
+
+@media only screen and (max-width: 767.98px) {
+	:root {
+		--nav-link-padding: 18px 0px;
+	}
+}
+
+.navbar-custom {
+	padding: 0px;
+	transition: 0.4s ease;
+	.navbar-nav {
+		align-items: center;
+	}
+	.nav-item {
+		.nav-link {
+			margin-left: var(--nav-margin-left);
+			padding: var(--nav-link-padding);
+			font-size: var(--nav-font-size);
+			font-weight: 700;
+			color: $dark-navy;
+			transition: 0.4s ease;
+
+			&:hover {
+				color: $primary;
+			}
+
+			&.active {
+				color: $primary;
+			}
+		}
+
+		&:first-child .nav-link {
+			margin-left: 0px;
+		}
+	}
+
+	.dropdown-toggle.show::after {
+		transform: rotate(180deg);
+	}
+	.navbar-toggler:focus {
+		box-shadow: none;
+	}
+
+	.dropdown-toggle::after {
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		content: "\f078";
+		border: none;
+		vertical-align: 0px;
+		transition: 0.4s ease;
+	}
+
+	.dropdown-menu {
+		display: block;
+		visibility: hidden;
+		opacity: 0;
+		transform: translateY(-50px);
+		transition: 0.5s ease all;
+		font-size: 13px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		border-radius: 4px;
+		background-color: $white;
+		border: 1px solid $white;
+		box-shadow: -1px 1px 20px -6px rgba(194, 190, 190, 0.78);
+		left: 25px;
+
+		.dropdown-item {
+			color: $dark-navy;
+			transition: 0.4s ease;
+		}
+
+		.dropdown-item.active,
+		.dropdown-item:active {
+			color: #fff;
+			text-decoration: none;
+			background-color: $primary;
+		}
+
+		&.show {
+			display: block;
+			visibility: visible;
+			opacity: 1;
+			transform: translateY(-8px);
+			transition: 0.5s ease all;
+			left: 25px;
+		}
+	}
+
+	.navbar-toggler {
+		padding: 0px;
+	}
+
+	// .navbar-custom-button {
+	// 	margin-left: var(--nav-margin-left);
+	// }
+
+	&.nav-sticky {
+		background-color: $white;
+		box-shadow: -1px 1px 20px -6px rgba(194, 190, 190, 0.28);
+
+		.nav-item {
+			.nav-link {
+				padding: 18px 0px;
+			}
+		}
+	}
+
+	&.soft-blue {
+		background-color: $soft-blue;
+	}
+
+	@media only screen and (max-width: 991.98px) {
+		//background: $soft-blue;
+		.nav-item {
+			width: 100%;
+			.nav-link {
+				font-size: 27px;
+				font-weight: 700;
+				margin-left: 0px;
+			}
+
+			.nav-lang {
+				margin: 0px 18px;
+			}
+		}
+
+		.navbar-collapse {
+			text-align: center;
+			height: calc(100vh - 82px);
+			overflow: auto;
+		}
+
+		.navbar-custom-button {
+			margin-left: 0px;
+			display: block;
+			padding: 14px 32px;
+			font-size: 22px;
+		}
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		&.nav-sticky {
+			.nav-item {
+				.nav-link {
+					padding: 22px 0px;
+				}
+			}
+		}
+	}
+}
+
+.navbar-brand {
+	padding: 16px 0px;
+	@include imageRatio(210, 42.58, true, cover, "logo");
+	&__logo-container {
+		width: 210px;
+	}
+	@media only screen and (max-width: 1199.98px) {
+		@include imageRatio(164, 33.25, true, cover, "logo");
+		&__logo-container {
+			width: 164px;
+		}
+	}
+	@media only screen and (max-width: 991.98px) {
+		&__logo-container {
+			margin: 16px 0px;
+		}
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		padding: 4px 0px;
+	}
+}
+
+.navbar-btn-wrapper {
+	margin-left: var(--nav-margin-left);
+
+	@media only screen and (max-width: 991.98px) {
+		margin-left: 0;
+		margin-bottom: 32px;
+	}
+}

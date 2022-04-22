@@ -1,0 +1,29 @@
+.decoration {
+	position: absolute;
+	width: 250px;
+	height: 250px;
+	border: 1px solid red;
+	z-index: 2;
+
+	&--top-left {
+		@extend .decoration;
+		top: -125px;
+		left: 0;
+	}
+	&--top-right {
+		@extend .decoration;
+		top: -125px;
+		right: 0;
+	}
+
+	&--bottom-left {
+		@extend .decoration;
+		bottom: 0;
+		left: 0;
+	}
+	&--bottom-right {
+		@extend .decoration;
+		right: 0;
+		bottom: 0;
+	}
+}

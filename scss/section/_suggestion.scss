@@ -1,0 +1,125 @@
+@use "../config/_mixin.scss" as *;
+@use "../config/_variable.scss" as *;
+
+.suggestion {
+	@include imageRatio(300, 217, true, cover, "decor-one");
+	@include imageRatio(250, 250, true, cover, "decor-two");
+	@include imageRatio(350, 242, true, cover, "decor-three");
+	@include imageRatio(405, 197, true, cover, "decor-four");
+	@include imageRatio(190, 38, true, cover, "logo");
+
+	position: relative;
+	padding-top: 150px;
+	padding-bottom: 100px;
+	background-color: #52c326;
+
+	.section-title-wrapper {
+		margin-bottom: 24px;
+	}
+
+	.section-title {
+		position: relative;
+		text-transform: initial;
+		font-size: 50px;
+		color: $white;
+	}
+
+	// &__logo-container {
+	// 	top: 4px;
+	// 	left: -20px;
+	// }
+
+	&__decor-one-container,
+	&__decor-two-container,
+	&__decor-three-container,
+	&__decor-four-container {
+		position: absolute;
+		z-index: 1;
+	}
+
+	&__decor-one-container {
+		top: -54px;
+		right: -67px;
+	}
+	&__decor-two-container {
+		bottom: -85px;
+		left: -66px;
+	}
+	&__decor-three-container {
+		top: 50px;
+		left: -2px;
+		z-index: 0;
+	}
+
+	&__decor-four-container {
+		bottom: 0px;
+		right: -2px;
+		z-index: 0;
+	}
+
+	@media only screen and (max-width: 1199.98px) {
+		@include imageRatio(162, 32.39, true, cover, "logo");
+		.section-title {
+			font-size: 42px;
+		}
+	}
+
+	@media only screen and (max-width: 991.98px) {
+		@include imageRatio(144, 28.78, true, cover, "logo");
+		@include imageRatio(178, 129, true, cover, "decor-one");
+		@include imageRatio(150, 150, true, cover, "decor-two");
+
+		@include imageRatio(280, 193, true, cover, "decor-three");
+		@include imageRatio(300, 146, true, cover, "decor-four");
+
+		.section-title {
+			font-size: 37px;
+		}
+		padding-top: 100px;
+		padding-bottom: 100px;
+		&__decor-one-container,
+		&__decor-two-container,
+		&__decor-three-container,
+		&__decor-four-container {
+			position: absolute;
+		}
+		&__decor-three-container {
+			top: 18px;
+			left: -2px;
+			z-index: 0;
+		}
+
+		&__logo-container {
+			top: 1px;
+		}
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		@include imageRatio(240, 165, true, cover, "decor-three");
+		@include imageRatio(230, 112, true, cover, "decor-four");
+
+		padding-top: 50px;
+		margin-top: -50px;
+		&__decor-three-container,
+		&__decor-four-container {
+			position: absolute;
+		}
+
+		&__decor-one-container {
+			top: auto;
+			right: auto;
+			bottom: -52px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		&__decor-two-container {
+			display: none;
+		}
+		&__decor-three-container {
+			top: 18px;
+			left: -2px;
+			z-index: 0;
+		}
+	}
+}

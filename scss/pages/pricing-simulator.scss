@@ -1,0 +1,53 @@
+@use "../config/_variable.scss" as *;
+@use "../config/_mixin.scss" as *;
+@use "../components/cards/_card-pricing-simulator.scss";
+@use "../components/cards/_card-sidebar.scss";
+@use "../components/cards/_card-form.scss";
+@use "../components/_list-group.scss";
+@use "../components/_custom-select2.scss" as *;
+
+.pricing-simulator {
+	background-color: $soft-blue;
+	min-height: 100vh;
+
+	.section-title-wrapper {
+		opacity: 0;
+	}
+
+	.row > * {
+		margin-top: 0px;
+	}
+}
+
+.scheduleForm {
+	&__label-container {
+		height: 90px;
+	}
+	&__label {
+		font-weight: 700;
+	}
+
+	@media only screen and (max-width: 575.98px) {
+		&__item {
+			padding-top: 16px;
+			border-bottom: 1px solid $gray-200;
+		}
+	}
+}
+
+.btn-delete {
+	@media only screen and (max-width: 575.98px) {
+		display: inline-block;
+		position: relative;
+		top: -6px;
+		height: 72px;
+		line-height: 60px;
+	}
+}
+
+// .form-scedule-new {
+// 	display: grid;
+// 	grid-template-columns: 100px auto 40px;
+// 	gap: 8px;
+// 	margin-bottom: 16px;
+// }

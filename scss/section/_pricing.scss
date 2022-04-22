@@ -1,0 +1,333 @@
+@use "../config/_variable.scss" as *;
+@use "../config/_mixin.scss" as *;
+@use "../components/cards/_card-pricing.scss";
+@use "../components/cards/_card-app.scss";
+.pricing {
+	@include imageRatio(153, 158, true, cover, "decor-one");
+	@include imageRatio(132, 55, true, cover, "decor-two");
+	@include imageRatio(63, 63, true, cover, "decor-three");
+	@include imageRatio(532, 223, true, cover, "decor-four");
+	@include imageRatio(431, 300, true, cover, "decor-five");
+	position: relative;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	background: $green-100;
+
+	.container {
+		position: relative;
+		z-index: 10;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: auto;
+		right: 0;
+		bottom: -4px;
+		left: 0;
+		width: 100%;
+		height: 100px;
+		background-image: url(../../images/section-white-degree-up-left.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		z-index: 1;
+	}
+
+	.swiper-slide {
+		padding: 32px 0px 0px 0px;
+	}
+
+	.swiper-pagination-bullet {
+		width: 25px;
+		height: 25px;
+		opacity: 1;
+		background-color: $white;
+		transition: 0.4s ease;
+		border: 1px solid $white;
+	}
+
+	.swiper-pagination-bullet-active {
+		border-radius: 25px;
+		background-color: $primary;
+		border: 5px solid $white;
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		width: 50px;
+		height: 50px;
+		background: $white;
+		border-radius: 50%;
+		color: $dark-navy;
+		font-size: 18px;
+		transition: 0.4s ease;
+		transition: all 0.5s;
+		outline: none;
+		// &:hover {
+		// 	border: 1px solid $white;
+		// }
+		&:active {
+			transform: scale(0.9);
+		}
+		@media only screen and (max-width: 991.98px) {
+			width: 42px;
+			height: 42px;
+			font-size: 16px;
+		}
+	}
+
+	.swiper-button-prev:after,
+	.swiper-rtl .swiper-button-next:after {
+		display: none;
+	}
+
+	.swiper-button-next:after,
+	.swiper-rtl .swiper-button-prev:after {
+		display: none;
+	}
+
+	.swiper-button-prev,
+	.swiper-rtl .swiper-button-next {
+		left: -50px;
+		right: auto;
+		box-shadow: 3px 7px 7px -6px rgb(0 0 0 / 53%);
+	}
+
+	.swiper-button-next,
+	.swiper-rtl .swiper-button-prev {
+		right: -50px;
+		left: auto;
+		box-shadow: 3px 7px 7px -6px rgb(0 0 0 / 53%);
+	}
+
+	.swiper-pagination {
+		position: relative;
+		margin-top: 32px;
+		bottom: 0px;
+	}
+
+	&__note {
+		font-size: 27px;
+		font-weight: 700;
+		color: $white;
+		font-family: $secondary-font;
+
+		span {
+			display: inline-block;
+			position: relative;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 36px;
+				width: 212px;
+				height: 50px;
+				background-image: url("../../images/section/pricing/Vector3.svg");
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+		}
+	}
+
+	&__decor-one-container,
+	&__decor-two-container,
+	&__decor-three-container,
+	&__decor-four-container,
+	&__decor-five-container {
+		position: absolute;
+		z-index: 3;
+	}
+
+	&__decor-one-container {
+		top: -87px;
+		right: -32px;
+	}
+	&__decor-two-container {
+		top: -36px;
+		right: 160px;
+	}
+	&__decor-three-container {
+		top: 43px;
+		right: 110px;
+	}
+	&__decor-four-container {
+		bottom: 0px;
+		right: 0px;
+		z-index: 1;
+	}
+
+	&__decor-five-container {
+		top: 60px;
+		left: 0px;
+		z-index: 0;
+	}
+
+	@media only screen and (max-width: 1199.98px) {
+		@include imageRatio(400, 168, true, cover, "decor-four");
+		@include imageRatio(348, 242, true, cover, "decor-five");
+
+		&::after {
+			bottom: -4px;
+			height: 100px;
+		}
+
+		.swiper-button-prev,
+		.swiper-rtl .swiper-button-next {
+			left: -8px;
+		}
+
+		.swiper-button-next,
+		.swiper-rtl .swiper-button-prev {
+			right: -9px;
+		}
+		&__decor-four-container,
+		&__decor-five-container {
+			position: absolute;
+		}
+
+		&__note {
+			font-size: 24px;
+			span {
+				&::before {
+					top: 46px;
+					width: 100%;
+					height: 50px;
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width: 991.98px) {
+		@include imageRatio(122, 126, true, cover, "decor-one");
+		@include imageRatio(100, 42, true, cover, "decor-two");
+		@include imageRatio(50, 50, true, cover, "decor-three");
+		&::after {
+			bottom: -6px;
+			height: 80px;
+		}
+
+		&__decor-one-container,
+		&__decor-two-container,
+		&__decor-three-container,
+		&__decor-four-container,
+		&__decor-five-container {
+			position: absolute;
+		}
+
+		&__decor-one-container {
+			top: -87px;
+			right: -32px;
+		}
+		&__decor-two-container {
+			top: -36px;
+			right: 94px;
+		}
+		&__decor-three-container {
+			top: 43px;
+			right: 110px;
+		}
+		&__decor-four-container {
+			bottom: 20px;
+		}
+		&__decor-five-container {
+			top: 91px;
+		}
+		&__note {
+			font-size: 22px;
+			span {
+				&::before {
+					top: 37px;
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		padding-top: 120px;
+		&__decor-one-container,
+		&__decor-two-container,
+		&__decor-three-container,
+		&__decor-four-container,
+		&__decor-five-container {
+			position: absolute;
+		}
+
+		&__decor-one-container {
+			top: 0px;
+			right: -32px;
+		}
+		&__decor-two-container {
+			top: 47px;
+			right: 94px;
+		}
+		&__decor-three-container {
+			top: 110px;
+			right: 65px;
+		}
+		&__decor-four-container {
+			bottom: 32px;
+		}
+		&__decor-five-container {
+			top: 42px;
+		}
+
+		&__note {
+			font-size: 20px;
+			span {
+				&::before {
+					top: 27px;
+				}
+			}
+		}
+		// .swiper-slide-active {
+		// 	width: 450px !important;
+		// 	// .card-pricing {
+		// 	// 	transform: translateY(-24px);
+		// 	// }
+		// }
+
+		.swiper-button-prev,
+		.swiper-rtl .swiper-button-next {
+			left: 8px;
+		}
+
+		.swiper-button-next,
+		.swiper-rtl .swiper-button-prev {
+			right: 8px;
+		}
+
+		.swiper-horizontal > .swiper-pagination-bullets,
+		.swiper-pagination-bullets.swiper-pagination-horizontal,
+		.swiper-pagination-custom,
+		.swiper-pagination-fraction {
+			bottom: 15px;
+		}
+	}
+
+	@media only screen and (max-width: 575.98px) {
+		padding-bottom: 120px;
+		.swiper-slide {
+			padding: 0px 0px 0px 0px;
+		}
+
+		&__decor-four-container {
+			bottom: 46px;
+		}
+
+		&__note {
+			font-size: 22px;
+			p {
+				margin-bottom: 0px;
+			}
+		}
+
+		&__note span::before {
+			top: 27px;
+		}
+	}
+
+	// @media only screen and (max-width: 379.98px) {
+	// 	.swiper-slide-active {
+	// 		width: 274px !important;
+	// 	}
+	// }
+}

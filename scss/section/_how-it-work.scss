@@ -1,0 +1,143 @@
+@use "../config/_mixin.scss" as *;
+@use "../config/_variable.scss" as *;
+@use "../components/cards/_card-work.scss";
+
+.how-it-work {
+	@include imageRatio(106, 106, true, cover, "decor-one");
+	@include imageRatio(184, 194, true, cover, "decor-two");
+	@include imageRatio(100, 100, true, cover, "decor-three");
+	position: relative;
+	padding-top: 150px;
+	padding-bottom: 50px;
+	background: $white;
+	z-index: 1;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 58%;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-image: url(../../images/section/how-it-work/Vector.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		z-index: 10;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: calc(100% - 2px);
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 150px;
+		background-image: url(../../images/section-white-degree-down-left.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		z-index: 1;
+	}
+
+	.section-title-wrapper {
+		margin-bottom: 80px;
+	}
+
+	.btn-wrapper {
+		top: 32px;
+	}
+
+	.container {
+		position: relative;
+		z-index: 10;
+	}
+
+	&__decor-one-container,
+	&__decor-two-container,
+	&__decor-three-container {
+		position: absolute;
+		z-index: 3;
+	}
+
+	&__decor-one-container {
+		top: -338px;
+		right: -21px;
+	}
+	&__decor-two-container {
+		top: -169px;
+		right: -61px;
+	}
+	&__decor-three-container {
+		top: -19px;
+		right: 120px;
+	}
+
+	@media only screen and (max-width: 1600px) {
+		.section-title-wrapper {
+			margin-bottom: 72px;
+		}
+		&::before {
+			top: 65%;
+		}
+		&::after {
+			top: calc(100% - 20px);
+		}
+	}
+
+	@media only screen and (max-width: 1400px) {
+		&::before {
+			top: 65%;
+		}
+	}
+
+	@media only screen and (max-width: 1399.98px) {
+		&::before {
+			top: 67%;
+		}
+	}
+
+	@media only screen and (max-width: 1200px) {
+		padding-top: 100px;
+		&::before {
+			top: 65%;
+		}
+	}
+
+	@media only screen and (max-width: 1199.98px) {
+		&::before {
+			top: 67%;
+		}
+	}
+
+	@media only screen and (max-width: 1024px) {
+		&::before {
+			top: 68%;
+		}
+	}
+
+	@media only screen and (max-width: 992px) {
+		&::before {
+			top: 67%;
+		}
+	}
+	@media only screen and (max-width: 991.98px) {
+		&::before {
+			display: none;
+		}
+		.section-title-wrapper {
+			margin-bottom: 24px;
+		}
+	}
+	@media only screen and (max-width: 767.98px) {
+		&::after {
+			top: calc(100% - 64px);
+		}
+		.btn-wrapper {
+			margin-top: 12px;
+		}
+	}
+
+	@media only screen and (max-width: 575.98px) {
+		padding-top: 90px;
+	}
+}

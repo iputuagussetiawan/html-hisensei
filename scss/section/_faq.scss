@@ -1,0 +1,155 @@
+@use "../config/_mixin.scss" as *;
+@use "../config/_variable.scss" as *;
+
+.faq {
+	@include imageRatio(140, 208, true, contain, "mascot-one");
+	@include imageRatio(140, 135, true, contain, "mascot-two");
+
+	@include imageRatio(102, 102, true, cover, "decor-one");
+	@include imageRatio(80, 85, true, cover, "decor-two");
+	@include imageRatio(160, 92, true, cover, "decor-three");
+	position: relative;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	a {
+		text-decoration: none;
+		color: $primary;
+		font-weight: 700;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: calc(100% - 43px);
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 150px;
+		background-image: url(../../images/section-white-degree-down-left.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		z-index: 1;
+	}
+
+	&__image-holder {
+		position: relative;
+		top: 16px;
+		display: flex;
+		justify-content: space-between;
+		text-align: center;
+		z-index: 10;
+	}
+
+	&__mascot-one-container,
+	&__mascot-two-container {
+		position: absolute;
+	}
+
+	&__mascot-one-container {
+		right: 98%;
+		bottom: 103px;
+	}
+
+	&__mascot-two-container {
+		left: 98%;
+		bottom: 103px;
+	}
+
+	&__decor-one-container,
+	&__decor-two-container,
+	&__decor-three-container {
+		position: absolute;
+		z-index: 3;
+	}
+
+	&__decor-one-container {
+		top: -183px;
+		left: -27px;
+	}
+	&__decor-two-container {
+		top: -151px;
+		left: 121px;
+	}
+	&__decor-three-container {
+		top: -59px;
+		left: -50px;
+	}
+
+	&__note {
+		text-align: center;
+	}
+
+	@media only screen and (max-width: 991.98px) {
+		@include imageRatio(80, 80, true, cover, "decor-one");
+		@include imageRatio(70, 74, true, cover, "decor-two");
+		@include imageRatio(120, 69, true, cover, "decor-three");
+
+		&__mascot-one-container {
+			right: 88%;
+		}
+
+		&__mascot-two-container {
+			left: 88%;
+		}
+		&__decor-one-container,
+		&__decor-two-container,
+		&__decor-three-container {
+			position: absolute;
+			z-index: 3;
+		}
+
+		&__decor-one-container {
+			top: -128px;
+			left: -27px;
+		}
+		&__decor-two-container {
+			top: -106px;
+			left: 83px;
+		}
+		&__decor-three-container {
+			top: -27px;
+			left: -27px;
+		}
+
+		&::after {
+			top: calc(100% - 97px);
+		}
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		padding-bottom: 0px !important;
+		&::after {
+			top: calc(100% - 58px);
+			height: 50px;
+		}
+		&__decor-one-container {
+			top: -108px;
+			left: -27px;
+		}
+		&__decor-two-container {
+			top: -86px;
+			left: 83px;
+		}
+		&__decor-three-container {
+			top: -15px;
+			left: -27px;
+		}
+
+		&__mascot-one-container,
+		&__mascot-two-container {
+			position: relative;
+		}
+
+		&__mascot-one-container {
+			right: 22px;
+			bottom: 0px;
+		}
+
+		&__mascot-two-container {
+			left: 22px;
+			bottom: 0px;
+		}
+	}
+}

@@ -1,0 +1,230 @@
+@use "../../base/_animation.scss" as *;
+@use "../../config/_mixin.scss" as *;
+@use "../../config/_variable.scss" as *;
+.card-why-us {
+	@include imageRatio(600, 425, true, contain, "image");
+	position: relative;
+	margin: 0px 42px;
+	height: 100%;
+	text-align: center;
+
+	&__decors {
+		// border: 1px solid red;
+		position: absolute;
+		top: 0;
+		height: 70px;
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		&--one {
+			@extend .card-why-us__decors;
+			top: 64px;
+			img {
+				position: relative;
+				z-index: 1;
+				object-fit: contain;
+				transition: 0.4s ease;
+				animation: floating-lg 2s infinite;
+				animation-delay: 1s;
+				&:first-child {
+					top: 42px;
+					width: 50px;
+					height: auto;
+					transition-delay: 0.1s;
+					animation-delay: 0.1s;
+				}
+
+				&:nth-child(2) {
+					width: 50px;
+					height: auto;
+					transition-delay: 0.2s;
+					animation-delay: 0.2s;
+				}
+				&:nth-child(3) {
+					width: 64px;
+					height: auto;
+					transition-delay: 0.3s;
+					animation-delay: 0.3s;
+				}
+
+				&:last-child {
+					transition-delay: 0.4s !important;
+					animation-delay: 0.4s !important;
+				}
+			}
+		}
+
+		&--two {
+			@extend .card-why-us__decors;
+			top: 0px;
+			img {
+				position: relative;
+				z-index: 1;
+				object-fit: contain;
+				transition: 0.4s ease;
+				animation: floating-lg 2.5s infinite;
+				animation-delay: 1s;
+				&:first-child {
+					top: 42px;
+					width: 50px;
+					height: auto;
+					transition-delay: 0.1s;
+					animation-delay: 0.1s;
+				}
+
+				&:nth-child(2) {
+					top: -10px;
+					width: 50px;
+					height: auto;
+					transition-delay: 0.2s;
+					animation-delay: 0.2s;
+				}
+				&:nth-child(3) {
+					top: -32px;
+					left: 18px;
+					width: 64px;
+					height: auto;
+					transition-delay: 0.3s;
+					animation-delay: 0.3s;
+				}
+				&:nth-child(4) {
+					top: 24px;
+					width: 72px;
+					height: auto;
+					transition-delay: 0.3s;
+					animation-delay: 0.3s;
+				}
+
+				&:last-child {
+					transition-delay: 0.4s !important;
+					animation-delay: 0.4s !important;
+				}
+			}
+		}
+		&--three {
+			@extend .card-why-us__decors;
+			top: 0px;
+			img {
+				position: relative;
+				z-index: 1;
+				object-fit: contain;
+				transition: 0.4s ease;
+				animation: floating-lg 2s infinite;
+				animation-delay: 1s;
+				&:first-child {
+					top: 42px;
+					width: 64px;
+					height: auto;
+					transition-delay: 0.1s;
+					animation-delay: 0.1s;
+				}
+
+				&:nth-child(2) {
+					top: -42px;
+					width: 72px;
+					height: auto;
+					transition-delay: 0.2s;
+					animation-delay: 0.2s;
+				}
+				&:nth-child(3) {
+					top: 24px;
+					width: 64px;
+					height: auto;
+					transition-delay: 0.3s;
+					animation-delay: 0.3s;
+				}
+
+				&:last-child {
+					transition-delay: 0.4s !important;
+					animation-delay: 0.4s !important;
+				}
+			}
+		}
+	}
+
+	&__title {
+		text-align: center;
+		font-size: 20px;
+		font-weight: 700;
+		color: $dark-navy;
+		font-family: $secondary-font;
+	}
+
+	&__info-container {
+		padding: 15px;
+		padding-bottom: 0px;
+	}
+
+	@media only screen and (max-width: 1199.98px) {
+		margin: 0 24px;
+		font-size: 20px;
+
+		&__title {
+			font-size: 18px;
+		}
+	}
+
+	@media only screen and (max-width: 991.98px) {
+		margin: 0;
+		font-size: 18px;
+
+		&__decors {
+			&--one {
+				img {
+					&:first-child {
+						width: 40px;
+					}
+					&:nth-child(2) {
+						width: 40px;
+					}
+					&:nth-child(3) {
+						width: 50px;
+					}
+				}
+			}
+
+			&--two {
+				img {
+					&:first-child {
+						width: 40px;
+					}
+
+					&:nth-child(2) {
+						width: 40px;
+					}
+					&:nth-child(3) {
+						width: 54px;
+					}
+					&:nth-child(4) {
+						width: 60px;
+					}
+				}
+			}
+			&--three {
+				img {
+					&:first-child {
+						width: 50px;
+					}
+
+					&:nth-child(2) {
+						width: 62px;
+					}
+					&:nth-child(3) {
+						width: 50px;
+					}
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		font-size: 16px;
+
+		&__info-container {
+			padding: 15px;
+			padding-bottom: 15px;
+		}
+	}
+}

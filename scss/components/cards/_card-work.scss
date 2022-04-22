@@ -1,0 +1,269 @@
+@use "../../config/_mixin.scss" as *;
+@use "../../config/_variable.scss" as *;
+
+.card-work {
+	@include imageRatio(132, 132, true, cover, "icon");
+	position: relative;
+	text-align: center;
+	height: 100%;
+	padding: 15px 4px;
+	z-index: 10;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 25%;
+		right: 0;
+		border-radius: 16px;
+		background: $white;
+		box-shadow: $box-shadow-100;
+		transition: 0.4s ease;
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	&:hover::before {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	&__body {
+		position: relative;
+		padding: 8px;
+	}
+
+	&__number {
+		font-size: 64px;
+		font-weight: 700;
+		font-family: $secondary-font;
+	}
+	&__title {
+		// @include elypsis(24, 1, 1.5);
+		font-size: 24px;
+		margin-bottom: 18px;
+		font-weight: 700;
+		font-family: $secondary-font;
+		color: $dark-navy;
+	}
+	&__info {
+		// @include elypsis(18, 3, 1.5);
+		font-size: 16px;
+		text-align: left;
+	}
+	&__bullet {
+		position: absolute;
+		bottom: -64px;
+		left: 50%;
+		transform: translateX(-50%);
+		display: block;
+		width: 50px;
+		height: 50px;
+		border-radius: 50px;
+		background: salmon;
+		z-index: 4;
+	}
+
+	&--one {
+		@extend .card-work;
+		top: 10px;
+	}
+	&--two {
+		@extend .card-work;
+		top: -60px;
+	}
+	&--three {
+		@extend .card-work;
+		top: -60px;
+	}
+	&--four {
+		@extend .card-work;
+		top: -26px;
+	}
+	&--five {
+		@extend .card-work;
+		top: -70px;
+	}
+
+	@media only screen and (max-width: 1600px) {
+		&--one {
+			top: 11px;
+		}
+		&--two {
+			top: -45px;
+		}
+		&--three {
+			top: -45px;
+		}
+		&--four {
+			top: -19px;
+		}
+		&--five {
+			top: -54px;
+		}
+	}
+
+	@media only screen and (max-width: 1400px) {
+		&--one {
+			top: -16px;
+		}
+		&--two {
+			top: -62px;
+		}
+		&--three {
+			top: -64px;
+		}
+		&--four {
+			top: -33px;
+		}
+		&--five {
+			top: -72px;
+		}
+	}
+
+	@media only screen and (max-width: 1399.98px) {
+		&__number {
+			font-size: 50px;
+		}
+		&__title {
+			// @include elypsis(20, 1, 1.5);
+			font-size: 20px;
+		}
+		&__info {
+			// @include elypsis(16, 3, 1.5);
+			font-size: 16px;
+		}
+		&--one {
+			top: 15px;
+		}
+		&--two {
+			top: -30px;
+		}
+		&--three {
+			top: -27px;
+		}
+		&--four {
+			top: -3px;
+		}
+		&--five {
+			top: -30px;
+		}
+	}
+
+	@media only screen and (max-width: 1200px) {
+		&--one {
+			top: 13px;
+		}
+		&--two {
+			top: -43px;
+		}
+		&--three {
+			top: -46px;
+		}
+		&--four {
+			top: -26px;
+		}
+		&--five {
+			top: -70px;
+		}
+	}
+
+	@media only screen and (max-width: 1199.98px) {
+		&--one {
+			top: -20px;
+		}
+		&--two {
+			top: -57px;
+		}
+		&--three {
+			top: -58px;
+		}
+		&--four {
+			top: -35px;
+		}
+		&--five {
+			top: -55px;
+		}
+	}
+
+	@media only screen and (max-width: 992px) {
+		&--one {
+			top: -24px;
+		}
+		&--two {
+			top: -74px;
+		}
+		&--three {
+			top: -78px;
+		}
+		&--four {
+			top: -59px;
+		}
+		&--five {
+			top: -98px;
+		}
+	}
+
+	@media only screen and (max-width: 991.98px) {
+		&__bullet {
+			display: none;
+		}
+		&--one {
+			top: 0px;
+		}
+		&--two {
+			top: 0px;
+		}
+		&--three {
+			top: 0px;
+		}
+		&--four {
+			top: 0px;
+		}
+		&--five {
+			top: 0px;
+		}
+	}
+
+	@media only screen and (max-width: 575.98px) {
+		@include imageRatio(90, 179, true, contain, "icon");
+		display: flex;
+		padding: 0px;
+
+		&::before {
+			top: 0;
+			bottom: 0;
+			right: 32px;
+			visibility: visible;
+			opacity: 1;
+		}
+		&__body {
+			padding: 0px 16px;
+			text-align: left;
+		}
+
+		&__title {
+			padding-left: 8px;
+			display: inline-block;
+			margin: 0;
+
+			-webkit-line-clamp: unset;
+			-webkit-box-orient: unset;
+			overflow: unset;
+			text-overflow: unset;
+		}
+
+		&__info {
+			display: contents;
+			-webkit-line-clamp: unset;
+			-webkit-box-orient: unset;
+			overflow: unset;
+			text-overflow: unset;
+		}
+
+		&__number {
+			vertical-align: middle;
+		}
+	}
+}

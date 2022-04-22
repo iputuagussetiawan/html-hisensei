@@ -1,0 +1,10 @@
+@use "../config/_variable.scss" as *;
+@use "../config/_mixin.scss" as *;
+
+@use "../components/cards/_card-thankyou.scss" as *;
+.thank-you {
+	@include imageRatio(224, 214, true, cover, "image");
+	@include imageRatio(157, 14, true, cover, "image-shadow");
+	background-color: $soft-blue;
+	//min-height: 100vh;
+}

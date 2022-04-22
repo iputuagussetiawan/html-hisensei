@@ -1,0 +1,390 @@
+@use "../config/_variable.scss" as *;
+@use "../config/_mixin.scss" as *;
+
+:root {
+	--banner-margin-buttom: 32px;
+	--banner-title-size: 38px;
+	--banner-description-size: 20px;
+}
+
+@media only screen and (max-width: 1400px) {
+	:root {
+		--banner-title-size: 38px;
+	}
+}
+
+@media only screen and (max-width: 1199.98px) {
+	:root {
+		--banner-margin-buttom: 27px;
+		--banner-title-size: 37px;
+		--banner-description-size: 18px;
+	}
+}
+
+@media only screen and (max-width: 991.98px) {
+	:root {
+		--banner-title-size: 32px;
+	}
+}
+
+@media only screen and (max-width: 575.98px) {
+	:root {
+		--banner-title-size: 27px;
+		--banner-description-size: 16px;
+	}
+}
+
+.banner {
+	@include imageRatio(612, 510, false, contain, "image");
+	@include imageRatio(116.27, 116.86, true, contain, "decor-one");
+	@include imageRatio(67.31, 61.25, true, contain, "decor-two");
+	@include imageRatio(61.19, 54.98, true, contain, "decor-three");
+	@include imageRatio(118, 81.48, true, contain, "decor-four");
+	@include imageRatio(82, 79.83, true, contain, "decor-five");
+	@include imageRatio(55, 91, true, contain, "decor-six");
+	@include imageRatio(72, 72, true, contain, "decor-seven");
+	@include imageRatio(103, 97, true, contain, "decor-eight");
+	@include imageRatio(80, 79, true, contain, "decor-nine");
+	position: relative;
+	background-color: $soft-blue;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: calc(100% - 2px);
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100px;
+		background-image: url(../../images/section-lightblue-degree-down.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		z-index: 1;
+	}
+
+	&__inner {
+		// height: 100vh;
+		min-height: 650px;
+		padding-top: 42px;
+	}
+
+	&__left {
+		opacity: 0;
+	}
+
+	&__image-wrapper {
+		position: relative;
+		opacity: 0;
+	}
+
+	&__title {
+		margin-bottom: var(--banner-margin-buttom);
+		font-size: var(--banner-title-size);
+		font-family: $secondary-font;
+		font-weight: 700;
+		color: $dark-navy;
+		//opacity: 0;
+		//transform: translateY(100px);
+	}
+
+	&__decription {
+		margin-bottom: var(--banner-margin-buttom);
+		p {
+			font-size: var(--banner-description-size);
+			font-weight: 400;
+		}
+		//opacity: 0;
+		//transform: translateY(100px);
+	}
+
+	&__student-percent {
+		margin-right: 12px;
+		position: relative;
+		font-size: 22px;
+		color: $dark-navy;
+		font-weight: 700;
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: -14px;
+			left: -10px;
+			width: 64px;
+			height: 15px;
+			background-image: url(../../images/banner/Vector3.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+	}
+
+	&__decor {
+		position: absolute;
+	}
+
+	&__decor-one-container {
+		left: 30px;
+		top: 36%;
+		animation-delay: 1s;
+	}
+	&__decor-two-container {
+		left: 26px;
+		top: 30%;
+	}
+	&__decor-three-container {
+		left: 48px;
+		top: 23%;
+		animation-delay: 1s;
+	}
+	&__decor-four-container {
+		left: 36%;
+		top: 20px;
+	}
+	&__decor-five-container {
+		right: 74px;
+		top: 19%;
+		animation-delay: 1s;
+	}
+	&__decor-six-container {
+		right: 140px;
+		top: 30%;
+	}
+	&__decor-seven-container {
+		right: 56px;
+		top: 42%;
+		animation-delay: 1s;
+	}
+	&__decor-eight-container {
+		right: 49%;
+		bottom: 15%;
+	}
+	&__decor-nine-container {
+		right: 39%;
+		bottom: 10%;
+		animation-delay: 1s;
+	}
+
+	@media only screen and (max-width: 1199.98px) {
+		@include imageRatio(612, 510, false, contain, "image");
+		@include imageRatio(94, 94, true, contain, "decor-one");
+		@include imageRatio(67.31, 61.25, true, contain, "decor-two");
+		@include imageRatio(61.19, 54.98, true, contain, "decor-three");
+		@include imageRatio(118, 81.48, true, contain, "decor-four");
+		@include imageRatio(82, 79.83, true, contain, "decor-five");
+		@include imageRatio(55, 91, true, contain, "decor-six");
+		@include imageRatio(72, 72, true, contain, "decor-seven");
+		@include imageRatio(86, 80.98, true, contain, "decor-eight");
+		@include imageRatio(58, 58, true, contain, "decor-nine");
+		&__decor {
+			position: absolute;
+		}
+		&__decor-one-container {
+			left: 30px;
+			top: 36%;
+		}
+		&__decor-two-container {
+			left: 26px;
+			top: 30%;
+		}
+		&__decor-three-container {
+			left: 48px;
+			top: 23%;
+		}
+		&__decor-four-container {
+			left: 36%;
+			top: 20px;
+		}
+		&__decor-five-container {
+			right: 46px;
+			top: 16%;
+		}
+		&__decor-six-container {
+			right: 100px;
+			top: 30%;
+		}
+		&__decor-seven-container {
+			right: 24px;
+			top: 42%;
+		}
+		&__decor-eight-container {
+			right: 49%;
+			bottom: 15%;
+		}
+		&__decor-nine-container {
+			right: 39%;
+			bottom: 10%;
+			animation-delay: 1s;
+		}
+	}
+
+	@media only screen and (max-width: 991.98px) {
+		height: auto;
+		min-height: 650px;
+		padding-bottom: 50px;
+		&__inner {
+			height: auto;
+			min-height: auto;
+		}
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		.btn-primary {
+			display: block;
+		}
+
+		@include imageRatio(612, 510, false, cover, "image");
+		@include imageRatio(94, 94, true, contain, "decor-one");
+		@include imageRatio(67.31, 61.25, true, contain, "decor-two");
+		@include imageRatio(61.19, 54.98, true, contain, "decor-three");
+		@include imageRatio(80, 55, true, contain, "decor-four");
+		@include imageRatio(64, 62, true, contain, "decor-five");
+		@include imageRatio(42, 69, true, contain, "decor-six");
+		@include imageRatio(58, 58, true, contain, "decor-seven");
+		@include imageRatio(64, 60, true, contain, "decor-eight");
+		@include imageRatio(50, 50, true, contain, "decor-nine");
+
+		&__decor {
+			position: absolute;
+		}
+		&__decor-one-container {
+			left: 30px;
+			top: 36%;
+		}
+		&__decor-two-container {
+			left: 26px;
+			top: 30%;
+		}
+		&__decor-three-container {
+			left: 48px;
+			top: 23%;
+		}
+		&__decor-four-container {
+			left: 36%;
+			top: 20px;
+		}
+		&__decor-five-container {
+			right: 46px;
+			top: 16%;
+		}
+		&__decor-six-container {
+			right: 100px;
+			top: 30%;
+		}
+		&__decor-seven-container {
+			right: 24px;
+			top: 42%;
+		}
+		&__decor-eight-container {
+			right: 49%;
+			bottom: 15%;
+		}
+		&__decor-nine-container {
+			right: 39%;
+			bottom: 10%;
+			animation-delay: 1s;
+		}
+	}
+
+	@media only screen and (max-width: 479.98px) {
+		@include imageRatio(612, 510, false, cover, "image");
+		@include imageRatio(80, 80, true, contain, "decor-one");
+		@include imageRatio(50.31, 45.25, true, contain, "decor-two");
+		@include imageRatio(50.19, 45.98, true, contain, "decor-three");
+		@include imageRatio(64, 44, true, contain, "decor-four");
+		@include imageRatio(50, 50, true, contain, "decor-five");
+		@include imageRatio(32, 52, true, contain, "decor-six");
+		@include imageRatio(45, 45, true, contain, "decor-seven");
+		@include imageRatio(64, 58, true, contain, "decor-eight");
+		@include imageRatio(48, 48, true, contain, "decor-nine");
+		&__image-container > * {
+			left: -16px;
+			width: 110%;
+		}
+		&__decor {
+			position: absolute;
+		}
+		&__decor-one-container {
+			left: 8px;
+			top: 36%;
+		}
+		&__decor-two-container {
+			left: 12px;
+			top: 27%;
+		}
+		&__decor-three-container {
+			left: 23px;
+			top: 18%;
+		}
+		&__decor-four-container {
+			left: 38%;
+			top: -8px;
+		}
+		&__decor-five-container {
+			right: 27px;
+			top: 15%;
+		}
+		&__decor-six-container {
+			right: 64px;
+			top: 30%;
+		}
+		&__decor-seven-container {
+			right: 15px;
+			top: 44%;
+		}
+		&__decor-eight-container {
+			right: 49%;
+			bottom: 15%;
+		}
+		&__decor-nine-container {
+			right: 39%;
+			bottom: 10%;
+			animation-delay: 1s;
+		}
+	}
+
+	@media only screen and (max-width: 379.98px) {
+		&__inner {
+			padding-top: 24px;
+		}
+		&__decor {
+			position: absolute;
+		}
+		&__decor-one-container {
+			left: 8px;
+			top: 36%;
+		}
+		&__decor-two-container {
+			left: 0px;
+			top: 26%;
+		}
+		&__decor-three-container {
+			left: 6px;
+			top: 14%;
+		}
+		&__decor-four-container {
+			left: 38%;
+			top: -8px;
+		}
+		&__decor-five-container {
+			right: 17px;
+			top: 12%;
+		}
+		&__decor-six-container {
+			right: 49px;
+			top: 27%;
+		}
+		&__decor-seven-container {
+			right: 15px;
+			top: 44%;
+		}
+		&__decor-eight-container {
+			right: 49%;
+			bottom: 15%;
+		}
+		&__decor-nine-container {
+			right: 39%;
+			bottom: 10%;
+			animation-delay: 1s;
+		}
+	}
+}

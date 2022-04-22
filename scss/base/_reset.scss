@@ -1,0 +1,51 @@
+@use "../_config.scss" as *;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	position: relative;
+	color: $black-200;
+	font-family: "Mulish", sans-serif;
+	font-weight: 300;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	cursor: pointer;
+	background: $primary;
+}
+
+::-moz-selection {
+	background-color: $primary;
+	color: $white;
+}
+
+::selection {
+	background-color: $primary;
+	color: $white;
+}
+
+p {
+	line-height: 1.5;
+}
+
+a {
+	color: $black-200;
+	transition: 0.4s ease;
+	&:hover {
+		text-decoration: none;
+		color: $primary;
+	}
+}

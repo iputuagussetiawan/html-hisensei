@@ -1,0 +1,92 @@
+@use "../config/_variable.scss" as *;
+@use "../config/_mixin.scss" as *;
+@use "../components/_social-icons.scss";
+/*-----------------------------------------
+////////////////// FOOTER /////////////////
+-----------------------------------------*/
+.footer {
+	@include imageRatio(359, 66, true, cover, "logo");
+	position: relative;
+	background-color: $dark-navy;
+	color: $white;
+
+	&__logo-container {
+		margin-bottom: 24px;
+	}
+
+	&__title {
+		margin-bottom: 24px;
+		font-size: 22px;
+		font-weight: 700;
+	}
+
+	&__menu {
+		padding: 0px;
+		list-style: none;
+	}
+
+	&__menu-item {
+		margin-bottom: 16px;
+	}
+
+	&__menu-link {
+		color: $white;
+		text-decoration: none;
+		font-weight: 300;
+	}
+
+	&__copyright {
+		margin-bottom: 24px;
+		font-size: 14px;
+		border-bottom: 1px solid #dadada42;
+		a {
+			color: $white;
+			text-decoration: none;
+			transition: 0.4s ease;
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+
+	&__info {
+		margin-bottom: 24px;
+		p {
+			font-size: 14px;
+			font-weight: 300;
+		}
+	}
+
+	&__info-title {
+		font-size: 20px;
+		font-weight: 700;
+	}
+
+	@media only screen and (max-width: 991.98px) {
+		padding-bottom: 50px;
+		&__logo-container {
+			margin-bottom: 16px;
+		}
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		&__logo-container {
+			max-width: 300px;
+		}
+	}
+}
+
+.footer-simple {
+	background-color: $soft-blue;
+	font-size: 14px;
+
+	&__copyright {
+		p {
+			color: $dark-navy;
+		}
+	}
+}
+
+/*-----------------------------------------
+//////////////////////////////// FOOTER END
+-----------------------------------------*/

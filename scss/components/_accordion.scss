@@ -1,0 +1,136 @@
+@use "../config/_variable.scss" as *;
+.custom-accordion {
+	position: relative;
+	z-index: 10;
+	.accordion-item {
+		margin-bottom: 16px;
+		background-color: #fff;
+		border: none;
+		box-shadow: 1px 1px 22px -3px rgba(0, 0, 0, 0.13);
+		border-radius: 16px;
+	}
+
+	.accordion-item:first-of-type {
+		border-top-left-radius: 16px;
+		border-top-right-radius: 16px;
+	}
+
+	.accordion-item:first-of-type .accordion-button {
+		border-top-left-radius: 16px;
+		border-top-right-radius: 16px;
+	}
+
+	.accordion-item:last-of-type {
+		border-bottom-right-radius: 16px;
+		border-bottom-left-radius: 16px;
+	}
+
+	.accordion-item:last-of-type .accordion-button.collapsed {
+		border-bottom-right-radius: 16px;
+		border-bottom-left-radius: 16px;
+	}
+
+	.accordion-button {
+		border-radius: 10px;
+		padding: 24px 18px;
+		font-size: 22px;
+		font-weight: 700;
+		color: $dark-navy;
+	}
+
+	.accordion-button:not(.collapsed) {
+		color: $dark-navy;
+		background-color: $white;
+		box-shadow: none;
+	}
+
+	.accordion-body {
+		margin: 0px 18px;
+		padding: 16px 0;
+		font-size: 18px;
+		border-top: 1px solid $gray-100;
+	}
+
+	.accordion-button:focus {
+		box-shadow: none;
+	}
+
+	@media only screen and (max-width: 1199.98px) {
+		.accordion-button {
+			font-size: 18px;
+		}
+
+		.accordion-body {
+			font-size: 16px;
+		}
+	}
+}
+
+.custom-accordion-pricing {
+	.accordion-button {
+		border: 1px solid $gray-100;
+		border-radius: 8px !important;
+		padding: 12px 16px;
+	}
+	.accordion-button:not(.collapsed) {
+		color: $gray-500;
+		background-color: $white;
+		box-shadow: none;
+	}
+
+	.accordion-button:focus {
+		z-index: 3;
+		border-color: $primary;
+		outline: 0;
+		box-shadow: none;
+	}
+
+	.accordion-body {
+		padding: 24px 0px;
+	}
+}
+
+.accordion-act {
+	display: flex;
+	justify-content: space-between;
+	background-color: $white;
+	cursor: pointer;
+	padding: 0.5rem 1rem;
+	width: 100%;
+	text-align: left;
+	border-bottom: 1px solid $gray-100;
+	outline: none;
+	transition: 0.4s;
+
+	&:hover {
+		background-color: #f2faff;
+	}
+
+	&.active {
+		background-color: #65acff;
+	}
+
+	&.active &__label,
+	&.active &__value {
+		color: $white;
+	}
+
+	&__label {
+		font-weight: 700;
+	}
+	&__value {
+		color: #999999;
+	}
+
+	&__icon {
+		font-size: 12px;
+	}
+}
+
+.panel {
+	padding: 0 18px;
+	background-color: #f9f9f9;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}

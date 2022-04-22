@@ -1,0 +1,142 @@
+@use "../config/_mixin.scss" as *;
+@use "../config/_variable.scss" as *;
+@use "../components/cards/_card-exp.scss";
+@use "../components/_play-button.scss";
+.learning-exp {
+	@include imageRatio(624, 389, true, cover, "image");
+	@include imageRatio(132, 139, true, cover, "mascot-one");
+	@include imageRatio(150, 233, true, cover, "mascot-two");
+
+	@include imageRatio(159, 86, true, cover, "decor-one");
+	@include imageRatio(120, 120, true, cover, "decor-two");
+	@include imageRatio(72, 72, true, cover, "decor-three");
+
+	position: relative;
+	background-color: $soft-blue;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: calc(100% - 2px);
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 150px;
+		background-image: url(../../images/section-lightblue-degree-down.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		z-index: 2;
+	}
+
+	&__image-container {
+		display: block;
+		position: relative;
+		margin: 0 auto;
+	}
+
+	&__mascot-one-container {
+		position: absolute;
+		left: 30px;
+		bottom: 0;
+	}
+	&__mascot-two-container {
+		position: absolute;
+		right: -4px;
+		bottom: 0;
+	}
+
+	&__decor-one-container,
+	&__decor-two-container,
+	&__decor-three-container {
+		position: absolute;
+		z-index: 3;
+	}
+
+	&__decor-one-container {
+		top: -245px;
+		right: -51px;
+	}
+	&__decor-two-container {
+		top: -118px;
+		right: -17px;
+	}
+	&__decor-three-container {
+		top: 0;
+		right: 101px;
+	}
+
+	@media only screen and (max-width: 1600px) {
+		@include imageRatio(610, 381, true, cover, "image");
+	}
+
+	@media only screen and (max-width: 1199.98px) {
+		@include imageRatio(140, 76, true, cover, "decor-one");
+		@include imageRatio(88, 88, true, cover, "decor-two");
+		@include imageRatio(72, 72, true, cover, "decor-three");
+
+		&__decor-one-container,
+		&__decor-two-container,
+		&__decor-three-container {
+			position: absolute;
+		}
+
+		&__decor-one-container {
+			top: -212px;
+			right: -51px;
+		}
+		&__decor-two-container {
+			top: -118px;
+			right: -17px;
+		}
+		&__decor-three-container {
+			top: -28px;
+			right: 43px;
+		}
+	}
+
+	@media only screen and (max-width: 991.98px) {
+		.section-title-wrapper {
+			text-align: center;
+		}
+	}
+
+	@media only screen and (max-width: 767.98px) {
+		@include imageRatio(110, 116, true, cover, "mascot-one");
+		@include imageRatio(142, 221, true, cover, "mascot-two");
+
+		@include imageRatio(132, 71, true, cover, "decor-one");
+		@include imageRatio(110, 110, true, cover, "decor-two");
+		@include imageRatio(72, 72, true, cover, "decor-three");
+
+		&__mascot-one-container,
+		&__mascot-two-container,
+		&__decor-one-container,
+		&__decor-two-container,
+		&__decor-three-container {
+			position: absolute;
+		}
+
+		&__mascot-one-container {
+			left: 0px;
+		}
+		&__mascot-two-container {
+			right: -40px;
+		}
+
+		&__decor-one-container {
+			top: -245px;
+			right: -51px;
+		}
+		&__decor-two-container {
+			top: -118px;
+			right: -55px;
+		}
+		&__decor-three-container {
+			top: -24px;
+			right: 50px;
+		}
+	}
+}

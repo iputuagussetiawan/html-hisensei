@@ -1,0 +1,8 @@
+@use "../config/_variable.scss" as *;
+@use "../config/_mixin.scss" as *;
+@use "../components/cards/_card-form.scss" as *;
+@use "../components/_custom-select2.scss" as *;
+.booking-free {
+	background-color: $soft-blue;
+	min-height: 100vh;
+}
