@@ -11,9 +11,8 @@
                     <p>Get a global standard learning system with our experienced tutor. Try now!</p>
                 </div>
                 <div class="btn-wrapper banner__btn-wrapper">
-                    <?php
-                    include 'buttonBook.php';
-                    ?>
+                    <a href="" class="btn btn-lg btn-primary"><span>Book FREE Trial</span></a>
+
                 </div>
             </div>
             <div class="offset-0 offset-xl-1 col-12 col-md-10 col-lg-7 col-xl-7 order-0 order-lg-1">
